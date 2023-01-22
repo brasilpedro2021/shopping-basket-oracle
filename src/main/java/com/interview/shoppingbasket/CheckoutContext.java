@@ -1,7 +1,10 @@
 package com.interview.shoppingbasket;
 
+import java.util.List;
+
 class CheckoutContext {
     private Basket basket;
+    private List<Promotion> promotions;
     private double retailPriceTotal = 0.0;
 
     public void setRetailPriceTotal(double retailPriceTotal) {
@@ -16,8 +19,15 @@ class CheckoutContext {
         return new PaymentSummary(retailPriceTotal);
     }
 
-
     public Basket getBasket() {
         return basket;
+    }
+    
+    public List<Promotion> getPromotions() {
+    	return this.promotions;
+    }
+    
+    public void setPromotions(List<Promotion> promotions) {
+    	this.promotions = promotions;
     }
 }
